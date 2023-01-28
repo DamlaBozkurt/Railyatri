@@ -7,5 +7,6 @@ describe('template spec', () => {
     //cy.Signin()
     cy.Pnr()
     cy.BookaMeal()
+    cy.ContactUs()
   })
 })

@@ -59,3 +59,11 @@ Cypress.Commands.add('Signin', (useMobile) => {
         cy.get('input[id="station_meal"]').click({force: true}).type('dfdf')
         cy.get('button[class="btn btn-default"]').eq('2').click({force: true})
     })
+    Cypress.Commands.add('ContactUs', (contact) => {
+        cy.get('a[class="RY_logo"]').click()
+        cy.get('a[class="RY_vertical more_search hide_action"]').click()
+        cy.get('a[href="/contact-us"]').click()
+        cy.get('input[class="form-control search-icons-input"]').eq('0').click().type('sdf')
+        cy.get('input[id="phone_number"]').click().type('345')
+
+    })
