@@ -26,9 +26,14 @@ Cypress.Commands.add('interCitySmartBus', (ticketbooking) => {
 })
 Cypress.Commands.add('trainInfo', (pnrstatus) => {
     cy.get('span[class="jsx-96366342a1937096 Header_ddBtn__T5q5e"]').eq('0').click()
-    //cy.get('span[class="Header_ryHeadingSpan__ODDbF"]').eq('1').click()
-    cy.get('label[class="jsx-96366342a1937096 Header_dropDown___89lY"]').click({force: true})
+    cy.get('span[class="Header_ryHeadingSpan__ODDbF"]').eq('1').click()
+    cy.get('a[class="RY_vertical train_info_list train-info hide_action"]').click()
+    cy.get('a[href="/seat-availability?utm_source=pnr_search_dweb_header_sa"]').click()
+    //cy.get('span[class="Header_ryHeadingSpan__ODDbF"]').eq('4').click()ÇALIŞIYO SİLME!
+
+    //cy.get('a[class="sub_title"]').click({force: true})
     //cy.get('label[class="jsx-96366342a1937096 Header_dropDown___89lY"]').should('have.value', 'Train information').click()
+    //cy.get('a[href="/seat-availability?utm_source=pnr_search_dweb_header_sa]"]').click()
     
 })
 Cypress.Commands.add('Signin', (useMobile) => {
