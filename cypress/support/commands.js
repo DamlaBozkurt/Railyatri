@@ -28,15 +28,17 @@ Cypress.Commands.add('trainInfo', (pnrstatus) => {
     cy.get('span[class="jsx-96366342a1937096 Header_ddBtn__T5q5e"]').eq('0').click()
     cy.get('span[class="Header_ryHeadingSpan__ODDbF"]').eq('1').click()
     cy.get('a[class="RY_vertical train_info_list train-info hide_action"]').click()
-    cy.get('a[href="/seat-availability?utm_source=pnr_search_dweb_header_sa"]').click()
+    cy.get('a[class="RY_logo"]').click()
+    //cy.get('a[href="/seat-availability?utm_source=pnr_search_dweb_header_sa"]').click()
     //cy.get('span[class="Header_ryHeadingSpan__ODDbF"]').eq('4').click()ÇALIŞIYO SİLME!
 
     //cy.get('a[class="sub_title"]').click({force: true})
     //cy.get('label[class="jsx-96366342a1937096 Header_dropDown___89lY"]').should('have.value', 'Train information').click()
-    //cy.get('a[href="/seat-availability?utm_source=pnr_search_dweb_header_sa]"]').click()
+   
     
 })
 Cypress.Commands.add('Signin', (useMobile) => {
+    cy.get('a[class="RY_vertical IntrCity_bus"]').click()
     cy.get('div[class="jsx-96366342a1937096 Header_signInBlock__iByM_"]').click({force: true})
     cy.get('div[class="jsx-96366342a1937096 Header_loginWrapper__lyqeR"]').click({force: true})
     cy.get('button[aria-disabled="true"]').contains('Continue').click()
@@ -47,4 +49,13 @@ Cypress.Commands.add('Signin', (useMobile) => {
         cy.get('div[class="jsx-96366342a1937096 Header_logo__Jzm0b"]').click()
         cy.get('div[id="item"]').click({force: true})
         cy.get('input[id="search_status"]').click({force: true}).type('334')
+        cy.get('a[class="RY_logo"]').click()
+    })
+    Cypress.Commands.add('BookaMeal', (meal) => {
+        cy.get('div[class="tab_title"]').eq('2').click( {force: true})
+        cy.get('img[src="https://images.railyatri.in/assets/dweb/booking/meal-099d7780b31aa2632ae637a062414ac7624a37b1c1e15043cd32f308457dfb64.png"]').click({force: true})
+        cy.get('input[class="form-control from trainpicker select_focus ui-autocomplete-input"]').click({force: true}).type('536')
+        cy.get('input[id="pnr_meal"]').click ({force: true}).type('3553')
+        cy.get('input[id="station_meal"]').click({force: true}).type('dfdf')
+        cy.get('button[class="btn btn-default"]').eq('2').click({force: true})
     })
