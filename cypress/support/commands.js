@@ -83,5 +83,12 @@ Cypress.Commands.add('Signin', (useMobile) => {
         cy.get('span[class="radio_checkmark"]').eq('4').click()
         cy.get('input[id="order_id_rt"]').click().clear('').type('3435')
         cy.get('input[name="mobile_no"]').click().clear('').type('dfvdv')
-        
-     })
+        })
+
+    Cypress.Commands.add('foodOnTrainStations', (foodAtSurat, ) => {
+        cy.get('a[class="RY_logo"]').click()
+        cy.get('div[class="col-md-4 travel_route"]').eq('1')
+        cy.get('p[class="route_title"]').should('have.text', 'Popular Bus RoutesPopular Food on Train StationsOther Useful Links').eq('1').click( {force: true})
+        cy.get('a[class="route_name"]').eq('9').click({force: true})
+    })
+      

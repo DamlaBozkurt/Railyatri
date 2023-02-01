@@ -8,6 +8,7 @@ describe('template spec', () => {
     //cy.Pnr()
     //cy.BookaMeal()
     //cy.ContactUs()
-    cy.Cancellations()
+    //cy.Cancellations()
+    cy.foodOnTrainStations()
   })
 })
